@@ -19,14 +19,19 @@ const winPatterns = [
 
 boxes.forEach((box)=>{
     box.addEventListener("click",()=>{
-        if(turnX){
-            box.innerText = "X";
-            turnX=false;
+        if(!box.disabled){
+            if(turnX ){
+                box.innerText = "X";
+                turnX=false;
+            }else{
+                box.innerText = "O";
+                turnX = true;
+            }
+            box.disabled = true;
+
         }else{
-            box.innerText = "O";
-            turnX = true;
+            alert("Choice Invalid")
         }
-        box.disabled = true;
 
         checkWinner();
     })
