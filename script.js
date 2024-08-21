@@ -29,10 +29,7 @@ boxes.forEach((box)=>{
             }
             box.disabled = true;
 
-        }else{
-            alert("Choice Invalid")
         }
-
         checkWinner();
     })
 })
